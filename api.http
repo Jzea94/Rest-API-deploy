@@ -1,0 +1,33 @@
+### Recuperar todas las peliculas
+GET http://localhost:3000/movies
+
+### Recuperar todas las peliculas por id
+GET http://localhost:3000/movies/365e0b2e-4674-4797-a532-6c95c720341c
+
+### Recuperar todas las peliculas por genero (query strig = genre=fantasy)
+GET http://localhost:3000/movies?genre=action
+
+### Creando una pelicula con POST
+
+POST http://localhost:3000/movies
+Content-Type: application/json
+
+{
+    "title": "The Godfather",
+    "year": 1975,
+    "director": "Francis Ford Coppola",
+    "duration": 175,
+    "poster": "https://img.fruugo.com/product/4/49/14441494_max.jpg",
+    "genre": [
+        "Crime",
+        "Drama"
+    ]    
+}
+### Actualizando la pelicula con id ...
+PATCH http://localhost:3000/movies/365e0b2e-4674-4797-a532-6c95c720341c
+Content-Type: application/json
+
+{
+    "year": 1976,
+    "duration": 120
+}
